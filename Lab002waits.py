@@ -12,6 +12,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 class Testseleniumbasic:
     def browsers(self):
         open_browser = webdriver.Chrome()
+        #implicit wait or global wait
         open_browser.implicitly_wait(20)
         return open_browser
 
@@ -30,7 +31,7 @@ class Testseleniumbasic:
         browser.find_element(By.ID, "login-password").send_keys("Password@123")
         # Click
         browser.find_element(By.ID, "js-login-btn").click()
-        # time
+        # Explicit time
         wait = WebDriverWait(browser, 20)
         # Validation
         wait.until(EC.text_to_be_present_in_element((By.XPATH, "//div[@class ='notification-box-description']"),
@@ -47,7 +48,7 @@ class Testseleniumbasic:
         browser.find_element(By.ID, "login-password").send_keys("ATBx@1234")
         # Click
         browser.find_element(By.ID, "js-login-btn").click()
-        # time
+        # Explicit time
         wait = WebDriverWait(browser, 20)
         # Validation
         wait.until(EC.text_to_be_present_in_element((By.XPATH, "//span[@class='Fw(semi-bold) ng-binding']"),
