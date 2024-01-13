@@ -13,6 +13,8 @@ class TestAssig:
        search_box.send_keys("16GB")
        search_btn = browser.find_element(By.XPATH, "//input[@id='gh-btn']")
        search_btn.click()
+
+        #print laptop name & price using find elements 
        headings=browser.find_elements(By.XPATH,"//span[@role='heading']")
        price=browser.find_elements(By.XPATH,"//span[@class='s-item__price']")
 
